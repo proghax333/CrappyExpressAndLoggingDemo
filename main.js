@@ -1,6 +1,6 @@
-import './style.css'
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+
+window.onload = async function() {
+  const percent = (await navigator.getBattery()).level * 100;
+  const res = await fetch(`http://localhost:5000/api/sendBattery?percent=${percent}`);
+}
